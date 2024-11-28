@@ -5,7 +5,7 @@ public class Cadenes_8 {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		// 8.-Escriu un programa que converteixi un número binari a decimal. No pots utilitzar el mètode Integer.parseInt(num-binari, 2).
-	       // Demanem el número binari
+	       
         System.out.print("Introdueix un número binari: ");
         String b = in.nextLine();
         

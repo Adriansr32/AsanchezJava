@@ -22,14 +22,11 @@ public class Bucles_6 {
             if (in.hasNextInt()) {
                 numeroEntrat = in.nextInt();
                 
-                if (numeroEntrat < min || numeroEntrat > max) {
+                if (numeroEntrat < min) {
                     System.out.println("El número entrat està fora de rang.");
-                    continue; 
-                }
-                
-                intents++; 
-                
-                if (numeroEntrat < numeroSecret) {
+                } else if (numeroEntrat > max) {
+                    System.out.println("El número entrat està fora de rang.");
+                } else if (numeroEntrat < numeroSecret) {
                     System.out.println("El número secret és major.");
                     min = numeroEntrat + 1; 
                 } else if (numeroEntrat > numeroSecret) {
@@ -42,6 +39,10 @@ public class Bucles_6 {
                 System.out.println("Si us plau, introdueix un número enter.");
                 in.next(); 
             }
+                
+                intents++; 
+                
+
         }
         
         in.close();

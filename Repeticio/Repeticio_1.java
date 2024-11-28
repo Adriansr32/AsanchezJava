@@ -15,7 +15,7 @@ public class Repeticio_1 {
             numero = in.nextInt();
 
             if (numero != 0) {
-                if (numero > 0) {
+                if (numero >= 0) {
                     contadorPositius++;
                 } else if (numero < 0) {
                     contadorNegatius++;
@@ -25,7 +25,7 @@ public class Repeticio_1 {
                 contadorTotal++;
             }
         } while (numero != 0); 
-
+        System.out.println();
         if (contadorTotal > 0) {
             System.out.println("Nombres positius: " + contadorPositius);
             System.out.println("Nombres negatius: " + contadorNegatius);
