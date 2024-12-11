@@ -1,22 +1,16 @@
 package Cadenes;
-<<<<<<< HEAD
-public class Cadenes_3 {
 
-	public static void main(String[] args) {
-=======
 import java.util.Scanner;
 public class Cadenes_3 {
 
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
->>>>>>> a127d31bd2d72ee41bfa80f04367c5d67760a3ef
+
 		// 3.- Escriu un programa que determini si una cadena és un password vàlid.
 		// El password ha de tenir un mínim de 8 caràcters.
 		// El password ha de tenir almenys una lletra minúscula i almenys una lletra majúscula.
 		// Com a mínim ha de tenir dos dígits
-<<<<<<< HEAD
 
-=======
 		
 		boolean GP = false;
 		while (!GP) {
@@ -63,7 +57,7 @@ public class Cadenes_3 {
 		}
 		in.close();
 		
->>>>>>> a127d31bd2d72ee41bfa80f04367c5d67760a3ef
+
 	}
 
 }

@@ -3,13 +3,13 @@ import java.util.Scanner;
 
 public class Repeticio_4 {
     public static void main(String[] args) {
-<<<<<<< HEAD
+
         Scanner in = new Scanner(System.in);
         System.out.print("Introdueix un número: ");
         int limit = in.nextInt();
         mostrarNombresPrimers(limit);
+    
     }
-
     static void mostrarNombresPrimers(int limit) {
         int count = 0;
         for (int i = 1; i < limit; i++) {
@@ -24,7 +24,7 @@ public class Repeticio_4 {
                 System.out.printf("%5d", i);
                 count++;
                 if (count % 10 == 0) {
-=======
+
         Scanner sc = new Scanner(System.in);
         System.out.print("Introdueix un número: ");
         int límit = sc.nextInt();
@@ -32,25 +32,26 @@ public class Repeticio_4 {
 
         int comptador = 0;
 
-        for (int i = 2; i < límit; i++) {
+        for (int i1 = 2; i1 < límit; i1++) {
             boolean ésPrimer = true;
-            for (int j = 2; j * j <= i && ésPrimer; j++) {
-                ésPrimer = i % j != 0;
+            for (int j = 2; j * j <= i1 && ésPrimer; j++) {
+                ésPrimer = i1 % j != 0;
             }
             if (ésPrimer) {
-                System.out.printf("%8d", i);
+                System.out.printf("%8d", i1);
                 comptador++;
                 if (comptador % 10 == 0) {
->>>>>>> a127d31bd2d72ee41bfa80f04367c5d67760a3ef
+
                     System.out.println();
                 }
             }
         }
-<<<<<<< HEAD
+
         if (count % 10 != 0) {
             System.out.println();
         }
-=======
->>>>>>> a127d31bd2d72ee41bfa80f04367c5d67760a3ef
+
+
     }
-}
+            }
+        }}}

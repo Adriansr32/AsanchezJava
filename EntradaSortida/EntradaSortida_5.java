@@ -9,9 +9,8 @@ public class EntradaSortida_5 {
  int ASCII = in.nextInt();
  char character = (char) ASCII;
  System.out.printf("El caràcter és: %c%n", character);
-<<<<<<< HEAD
-=======
+
  in.close();
->>>>>>> a127d31bd2d72ee41bfa80f04367c5d67760a3ef
+
 }
 }

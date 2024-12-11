@@ -1,14 +1,11 @@
 package Cadenes;
-public class Cadenes_2 {
 
-	public static void main(String[] args) {
-=======
 import java.util.Scanner;
 public class Cadenes_2 {
 
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
->>>>>>> a127d31bd2d72ee41bfa80f04367c5d67760a3ef
+
 		// 2.- Escriu un programa que demani a l’usuari una lletra i indiqui si és una consonant o una vocal.
 		// Entra una lletra: b
 		// b és una consonant
@@ -16,10 +13,9 @@ public class Cadenes_2 {
 		// A és una vocal
 		// Entra una lletra: #
 		// # no és un caràcter vàlid
-<<<<<<< HEAD
-	}
 
-=======
+	
+
 		
        
         String v = "aeiou";
@@ -41,5 +37,5 @@ public class Cadenes_2 {
         }
         in.close();
     }
->>>>>>> a127d31bd2d72ee41bfa80f04367c5d67760a3ef
+
 }
