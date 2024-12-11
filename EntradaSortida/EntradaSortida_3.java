@@ -18,5 +18,9 @@ System.out.printf("-------%n");
 System.out.printf("%7d%n", resultat);
 
 
+
+in.close();
+
+
  }
 }

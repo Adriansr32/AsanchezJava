@@ -11,5 +11,10 @@ public class EntradaSortida_1 {
  int suma = a + b + c;
  double resultat = suma / 2.0;
  System.out.printf("El resultat de la operació " + "(" + a + "+" + b + "+" + c + ")/2 és %.2f", resultat);
+ in.close();
  }
-}
+
+ 
+ }
+ 
+

@@ -23,5 +23,8 @@ System.out.print("Ni un ni l'altre");
 
 
 
+in.close();
+
+
 }
 }

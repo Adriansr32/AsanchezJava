@@ -18,6 +18,6 @@ public class seleccio1_3 {
 	System.exit(0);
 }
 
-        
+in.close();
     }
 }

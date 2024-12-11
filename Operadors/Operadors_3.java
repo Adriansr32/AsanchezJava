@@ -16,5 +16,8 @@ public class Operadors_3 {
 	System.out.println("Xocolatines: " + xocolatines);
 	System.out.println("Xiclets: " + xiclets);
 	System.out.println("Sobren: " + sobrants);
+
+	in.close();
+
 }
 }

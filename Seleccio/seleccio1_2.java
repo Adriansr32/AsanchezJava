@@ -18,5 +18,8 @@ public class seleccio1_2 {
  System.out.printf("El numero %d es invàlid", billet);
 
 }
+
+ in.close();
+
 }
 }

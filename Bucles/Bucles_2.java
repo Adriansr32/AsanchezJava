@@ -11,6 +11,9 @@ int n = in.nextInt();
 int i;
 for (i = 1; i <= n; i = i + 1) {
  System.out.printf("Numero: %d%n", i);
+
+ in.close();
+
 }
 
 }

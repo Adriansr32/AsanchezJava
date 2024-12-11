@@ -11,6 +11,10 @@ do {
 System.out.println("Numero: " + a);
 a++;
 } while (a <= n);
+
  
+
+in.close();
+
 }
 }

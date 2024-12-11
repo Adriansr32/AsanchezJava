@@ -17,5 +17,8 @@ System.out.printf("| 1 | %46s%n", a + " |");
 System.out.printf("| 2 | %46s%n", b + " |");
 System.out.printf("| 3 | %46s%n", c + " |");
 System.out.println("+--------------------------------------------------+");
+
+in.close();
+
 }
 }

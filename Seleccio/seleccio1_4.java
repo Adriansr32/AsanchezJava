@@ -20,5 +20,6 @@ public class seleccio1_4 {
         } else {
             System.out.println("Els dos números no són iguals.");
         }
+in.close();
     }
 }
