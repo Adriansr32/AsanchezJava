@@ -14,6 +14,11 @@ public class EntradaSortida_2 {
  double cost = in.nextDouble();
  double resultat = km * cost;
  System.out.println("********************************************************");
+<<<<<<< HEAD
  System.out.printf("El cost del viatge de Manresa a Barcelona és de %.2f ", resultat);
+=======
+ System.out.printf("El cost del viatge de %s a %s és de %.2f ", inici, destini, resultat);
+ in.close();
+>>>>>>> a127d31bd2d72ee41bfa80f04367c5d67760a3ef
  }
 }

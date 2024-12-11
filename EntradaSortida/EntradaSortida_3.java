@@ -16,7 +16,11 @@ System.out.printf("%7d%n", a);
 System.out.printf("+%6d%n", b);
 System.out.printf("-------%n");
 System.out.printf("%7d%n", resultat);
+<<<<<<< HEAD
 
+=======
+in.close();
+>>>>>>> a127d31bd2d72ee41bfa80f04367c5d67760a3ef
 
  }
 }

@@ -21,7 +21,11 @@ System.out.print("Son tots diferents");
 System.out.print("Ni un ni l'altre");
 }
 
+<<<<<<< HEAD
 
+=======
+in.close();
+>>>>>>> a127d31bd2d72ee41bfa80f04367c5d67760a3ef
 
 }
 }
