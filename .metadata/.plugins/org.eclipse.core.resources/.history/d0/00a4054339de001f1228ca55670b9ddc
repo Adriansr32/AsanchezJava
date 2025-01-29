@@ -1,0 +1,58 @@
+package metodes_4;
+import java.util.*;
+public class metodes4_2 {
+
+	public static void main(String[] args) {
+        StringBuilder sb = new StringBuilder();  
+        String Nums = entradaNums();
+        int dia = dia(Nums);  
+        int mes =  mes(Nums);
+        int any = any(Nums);
+        
+        
+        
+		}
+
+	public static String entradaNums() {
+		Scanner in = new Scanner(System.in);
+        System.out.print("Introdueix una data en format dd/mm/aaaa (anys vàlids: 2021-2024): ");
+        return in.nextLine();
+		
+	}
+	
+	public static int dia(String Nums) {
+		return Integer.parseInt(Nums.split("/")[0]);
+	}
+	public static int mes(String Nums) {
+		return Integer.parseInt(Nums.split("/")[1]);
+	}
+	public static int any(String Nums) {
+		return Integer.parseInt(Nums.split("/")[2]);
+	}
+	
+	public static boolean EsvalidDia(int dia, int mes, int any) {
+	       int[] diesPerMes = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+	        // Comprovar si és any de traspàs
+	        if (any == 2024 && mes == 2) {
+	            diesPerMes[1] = 29;
+	        }
+
+	        return dia >= 1 && dia <= diesPerMes[mes - 1];
+	}
+	
+	public static boolean EsvalidMes(int mes) {
+		
+	}
+	public static boolean EsvalidAny(int any) {
+		
+	}
+	public static boolean EsvalidDiaDeLaSemana(int any) {
+		
+	}
+    public static String obtenirNomMes(int mes) {
+        String[] nomsMesos = {"gener", "febrer", "març", "abril", "maig", "juny", "juliol", "agost", "setembre", "octubre", "novembre", "desembre"};
+        return nomsMesos[mes - 1];
+    }
+}
+}

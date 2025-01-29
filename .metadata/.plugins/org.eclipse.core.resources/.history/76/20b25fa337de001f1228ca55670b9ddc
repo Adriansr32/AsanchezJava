@@ -1,0 +1,13 @@
+package metodes_4;
+import java.util.*;
+public class metodes4_2 {
+
+	public static void main(String[] args) {
+        StringBuilder sb = new StringBuilder();  
+        entradaNums();
+		}
+
+	public static void entradaNums() {
+		
+	}
+}

@@ -1,0 +1,64 @@
+package metodes3_AdrianSanchez;
+import java.util.*;
+import java.util.Collections;
+public class Metodes3_2 {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in); 
+		ArrayList<Integer> nums = new ArrayList<>();	
+	   
+		boolean zero = false;
+		int num = 0;
+		while (!zero) {
+	        System.out.print("Introduce un número: ");
+	        num = in.nextInt();
+	        if (num == 0) {
+	        	zero = true;
+	        } 
+	        else if (num >= -10 && num <= 10) {
+	        	nums.add(num); 
+	        } else {
+	        	System.out.println("[Error!] - Introdueix un numero entre el -10 i el 10!");
+	        }
+	        
+	    }
+		System.out.print("Has entrat el següents números: [" );
+		 for (int i = 0; i < nums.size() - 1; i++) {
+             System.out.print(nums.get(i) + ", ");    		
+     } 
+		System.out.print(nums.get(nums.size() - 1) + "]");
+		System.out.println();
+		Collections.sort(nums);
+		System.out.print("Si els ordenem quedaran així: [" );
+		 for (int i = 0; i < nums.size() - 1; i++) {
+            System.out.print(nums.get(i) + ", ");    		
+    } 
+		System.out.print(nums.get(nums.size() - 1) + "]");
+		
+		ArrayList<Integer> numsPositive = new ArrayList<>();
+		ArrayList<Integer> numsNegative = new ArrayList<>();
+		
+		for (int i = 0; i < nums.size(); i++) {
+			if (nums.get(i) > 0 ) {
+				numsPositive.add(nums.get(i));
+			} else if (nums.get(i) < 0){
+				numsNegative.add(nums.get(i));
+			}
+		}
+		System.out.println();
+		System.out.print("Els números positius són: [" );
+		 for (int i = 0; i < numsPositive.size() - 1; i++) {
+           System.out.print(numsPositive.get(i) + ", ");    		
+   } 
+		System.out.print(numsPositive.get(numsPositive.size() - 1) + "]");
+		
+		System.out.println();
+		for (int i = 0; i < numsPositive.size(); i++) {
+            for (int j = 0; j < i; j++) {
+			System.out.println(numsPositive.get(i) + ":");
+		}
+	}
+		
+	}
+
+}

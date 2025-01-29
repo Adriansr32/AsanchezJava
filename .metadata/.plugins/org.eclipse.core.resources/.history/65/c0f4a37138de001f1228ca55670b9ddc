@@ -1,0 +1,37 @@
+package metodes_4;
+import java.util.*;
+public class metodes4_2 {
+
+	public static void main(String[] args) {
+        StringBuilder sb = new StringBuilder();  
+        entradaNums();
+		}
+
+	public static String entradaNums() {
+		Scanner in = new Scanner(System.in);
+        System.out.print("Introdueix una data en format dd/mm/aaaa (anys vàlids: 2021-2024): ");
+        return in.nextLine();
+		
+	}
+	
+	public static int dia(String Nums) {
+		
+	}
+	public static int mes(String Nums) {
+		
+	}
+	public static int any(String Nums) {
+		
+	}
+	
+	public static boolean EsvalidDia(int diaT) {
+		
+	}
+	
+	public static boolean EsvalidMes(int mesT) {
+		
+	}
+	public static boolean EsvalidAny(int anyT) {
+		
+	}
+}

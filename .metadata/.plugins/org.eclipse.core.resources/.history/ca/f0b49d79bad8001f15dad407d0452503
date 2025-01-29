@@ -1,0 +1,51 @@
+package metodes3_AdrianSanchez;
+import java.util.*;
+public class Metodes3_1 {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		
+		boolean correctN = false;
+		int num = 0;
+		while (!correctN) {
+			System.out.print("Introdueix un numero imparell [5 - 29]: ");
+			num = in.nextInt();
+			if (num >= 5 && num <= 29) {
+				correctN = true;
+			} else {
+				System.out.println("Caracter no valid");
+			}
+		}
+		in.nextLine();
+		boolean correctL = false;
+		String letter = "";
+		while (!correctL) {
+			System.out.print("Amb quina lletra vols que pinti l'arbre: ");
+			letter = in.nextLine().trim();
+			if (letter.length() == 1 && Character.isLetter(letter.charAt(0))) {
+				correctL = true;
+			} else {
+				System.out.println("Introdueix una sola lletra");
+			}
+		}
+		arbre(num, letter);
+		in.close();
+	}
+	public static void arbre(int num, String letter) {
+        int maxSpaces = (num - 1) / 2;  // Calcula el número máximo de espacios para el tronco y las hojas
+
+        for (int i = 1; i <= num; i += 2) {
+            // Calcula cuántos espacios se necesitan para centrar el árbol
+            int spaces = (num - i) / 2;
+            // Imprime los espacios y luego la letra del árbol
+            System.out.printf("%" + (spaces + i) + "s", "");
+            for (int j = 0; j < i; j++) {
+                System.out.print(letter);
+            }
+            System.out.println(); // Salto de línea
+        }
+        
+        // Imprime el tronco centrado
+        System.out.printf("%" + (maxSpaces + 1) + "s%n", "l");
+    }
+}

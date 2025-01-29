@@ -1,0 +1,45 @@
+package metodes_4;
+
+import java.util.*;
+
+public class metodes4_1 {
+
+	public static void main(String[] args) {
+		finals(null);
+	   
+	}
+	
+	public static void finals(ArrayList<String> finals) {
+        String equip1 = "";
+        String equip2 = "";
+		StringBuilder sb = new StringBuilder();
+		
+        ArrayList<String> team1 = new ArrayList<>(finals.subList(0, 4));
+        
+        ArrayList<String> team2 = new ArrayList<>(finals.subList(4, 8));
+        
+        sb.append(equip1).append(" vs ").append(equip2);
+        
+        System.out.println(sb.toString());
+	}
+	
+	public static void shuffle(ArrayList<String> teams) {
+	    
+		Collections.shuffle(teams);
+
+	}
+	public static ArrayList<String> teams( ArrayList<String> Teams ) {
+	    
+		Teams.add("Real Madrid");
+	    Teams.add("FC Barcelona");
+	    Teams.add("Atlético de Madrid");
+	    Teams.add("Liverpool FC");
+	    Teams.add("Bayern Múnich");
+	    Teams.add("Juventus");
+	    Teams.add("Paris Saint-Germain (PSG)");
+	    Teams.add("Real Betis");
+	    
+	    return Teams;
+	}
+
+}

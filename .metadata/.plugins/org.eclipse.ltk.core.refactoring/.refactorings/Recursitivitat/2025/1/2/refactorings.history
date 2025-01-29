@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Recursivitat.Recursivitat_1&apos; to &apos;Recursivitat_2&apos;&#x0D;&#x0A;- Original project: &apos;Recursitivitat&apos;&#x0D;&#x0A;- Original element: &apos;Recursivitat.Recursivitat_1&apos;&#x0D;&#x0A;- Renamed element: &apos;Recursivitat.Recursivitat_2&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Recursivitat_1&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;Recursivitat{Recursivitat_1.java[Recursivitat_1" matchStrategy="1" name="Recursivitat_2" qualified="false" references="true" similarDeclarations="false" stamp="1736520653818" textual="false" version="1.0"/>
+</session>
