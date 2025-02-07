@@ -1,0 +1,9 @@
+package metodes;
+import java.util.*;
+public class asdasdasdasdas {
+	
+	ArrayList<String> lista = new ArrayList<>();
+	
+	lista.add("Mundo");
+	lista.get(1);
+}

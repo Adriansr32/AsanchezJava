@@ -1,0 +1,97 @@
+package dissenyModular_AdriánSánchez;
+
+import metodes_1.metodes1_6;
+import metodes_2.metodes2_3;
+import metodes_3AdrianSanchez.Metodes3_1;
+import java.util.*;
+
+public class DissenyModular_1 {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        boolean valid = false; 
+        int op = 0;
+        
+        // Bucle para que el usuario ingrese una opción válida
+        while (!valid) {
+            mostrarMenu();
+            
+            System.out.println("Entra una opcio: ");
+            
+            // Verificación de que la opción ingresada sea un número entero
+            if (in.hasNextInt()) {
+                op = in.nextInt(); // Asignar el valor ingresado a op
+                if (op >= 1 && op <= 5) { // Verificar que la opción esté dentro de los valores válidos
+                    valid = true;
+                } else {
+                    System.err.println("Opció no vàlida. Intenta de nou.");
+                }
+            } else {
+                System.err.println("Error: El valor ha de ser un número.");
+                in.next(); // Limpiar el buffer
+            }
+        }
+
+        // Estructura switch que ejecuta según la opción seleccionada
+        switch (op) {
+            case 1:
+                ejecutarTestMatriuBinaria();
+                break;
+            case 2:
+                mostrarNumeroEnLletres();
+                break;
+            case 3:
+                dibujarArbre();
+                break;
+            case 4:
+                mostrarFaq();
+                break;
+            case 5:
+                System.out.println("Sortint...");
+                break;
+            default: 
+                System.out.println("Opcio no valida.");
+        }
+
+        in.close();
+    }
+
+    // Mostrar el menú de opciones
+    public static void mostrarMenu() {
+        System.out.println("Menú");
+        System.out.println("-------------------------------");
+        System.out.println("1. Executa el test sobre el mètode de generació de matriu binària (dimensió= 4)");
+        System.out.println("2. Mostra com s'escriu amb lletres el número 2823");
+        System.out.println("3. Dibuixa les fulles d'un arbre amb base 21");
+        System.out.println("4. Preguntes més freqüents sobre mètodes");
+        System.out.println("5. Sortir");
+        System.out.println();
+    }
+
+    // Ejecuta el test sobre la matriu binaria
+    public static void ejecutarTestMatriuBinaria() {
+        int[][] matriu = metodes1_6.generarMatriuBinaria(4);
+        System.out.println("Matriu binària generada:");
+        metodes1_6.mostrarMatriu(matriu); 
+    }
+
+    // Muestra el número 2823 en letras
+    public static void mostrarNumeroEnLletres() {
+        int numero = 2823;
+        String nom = metodes2_3.intToNom(numero);
+        System.out.println(nom);
+    }
+
+    // Dibuja las hojas de un árbol con base 21
+    public static void dibujarArbre() {
+        int num = 21;
+        String letter = "A";
+        Metodes3_1.arbre(num, letter);
+    }
+
+    // Muestra preguntas frecuentes sobre métodos
+    public static void mostrarFaq() {
+        String faqResult = DissenyModular_2.faq();
+        System.out.println(faqResult);
+    }
+}
