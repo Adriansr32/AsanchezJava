@@ -21,8 +21,8 @@ class Course {
 	public void setNameTeacher(String nameTeacher) {
 		this.nameTeacher = nameTeacher;
 	}
-	@Override
-	public String toString() {
+	
+	public String formatCadena() {
 	    return nameCourse + " impartit per " + nameTeacher;
 	}
 }

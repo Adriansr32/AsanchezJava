@@ -9,32 +9,36 @@ public class Menu {
     
         while (!ter) {
             menu();
+            op = op(in); 
             
-            op = op(in);
-    
             switch (op) {
                 case 1:
                     System.out.println("Hello World");
                     break;
                 case 2:
-                    numbers.sumTwo();
+                	int num1 = numbers.askNumber(in, "Introdueix un numero: ");
+                	int num2 = numbers.askNumber(in, "Introdueix un numero: ");
+                	System.out.println(numbers.sumTwo(num1, num2));
                     break;
                 case 3:
-                    numbers.SumUntil();
+                    int num3 = numbers.askNumber(in, "Introdueix un numero: ");
+                    System.out.println("La suma fins a " + num3 + " és: " + numbers.SumUntil(num3));
                     break;
                 case 4:
-                    sentences.Paraules();
+                	String frase = sentences.askParaula(in, "Introdueix una frase: ");
+                	String paraula = sentences.askParaula(in, "Introdueix una paraula: ");
+                    System.out.println("Quantes " + paraula + " hi ha en aquesta frase: " + sentences.Paraules(frase, paraula));
                     break;
                 case 5:
-                    sentences.Reverse();
+                	String frase1 = sentences.askParaula(in, "Introdueix una frase: ");
+                    System.out.println("La frase invertida es: " + sentences.Reverse(frase1));
                     break;
                 case 6:
-                    ter = Exit();
+                    ter = Exit(); 
                     break;
                 default:
                     System.out.println("Opció no vàlida");
                     break;
-                    
             }
         }
         in.close();
@@ -51,14 +55,24 @@ public class Menu {
     }
 
     public static int op(Scanner in) {
-        System.out.println("Introdueix una opció:");
-        System.out.print(">>> ");
-        if (in.hasNextInt()) {
-        	return in.nextInt();
-        } else {
-        	System.out.println("op no valida");
+        int op = 0;
+        boolean valid = false;
+        while (!valid) {  // Bucle para asegurar que se ingresa una opción válida
+            System.out.println("Introdueix una opció:");
+            System.out.print(">>> ");
+            if (in.hasNextInt()) {
+                op = in.nextInt();
+                if (op >= 1 && op <= 6) {
+                    valid = true;  // Opción válida
+                } else {
+                    System.out.println("Opció fora de rang. Torna-ho a provar.");
+                }
+            } else {
+                System.out.println("op no vàlida. Torna-ho a provar.");
+                in.next();  // Limpiar el buffer
+            }
         }
-		return 0;
+        return op;
     }
 
     public static boolean Exit() {

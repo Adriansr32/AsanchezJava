@@ -2,32 +2,39 @@ package examen2_1;
 import java.util.Scanner;
 
 public class sentences {
-    public static void Paraules() {
-        Scanner in = new Scanner(System.in);
-        System.out.println("Introdueix una frase: ");
-        System.out.print(">>> ");
-        String paraulas = in.nextLine();
-        System.out.println("Introdueix una paraula: ");
-        String paraula2 = in.nextLine();
-        
-        String[] paraula1 = paraulas.split(" ");
+    public static int Paraules(String Frase, String Paraula) {
+        String[] paraula1 = Frase.split(" ");
         int contador = 0;
         
         for (String paraula : paraula1) {
-            if (paraula.contains(paraula2)) {
+            if (paraula.contains(Paraula)) {
                 contador++;
             }
         }
         
-        System.out.println("La paraula apareix " + contador + " vegades.");
+        return contador; 
     }
 
-    public static void Reverse() {
-        Scanner in = new Scanner(System.in);
-        System.out.println("Introdueix una frase: ");
-        System.out.print(">>> ");
-        String frase = in.nextLine();
-        String reversed = new StringBuilder(frase).reverse().toString();
-        System.out.println("Frase invertida: " + reversed);
+    public static String Reverse(String Frase) {
+        String reversed = new StringBuilder(Frase).reverse().toString();
+        return reversed; 
+    }
+    
+    public static String askParaula(Scanner in, String question) {
+        Scanner in1 = new Scanner(System.in);
+        String paraula = null;
+        boolean valid = false;
+        while (!valid) {
+            System.out.println(question); 
+            System.out.print(">>> ");
+            if (in1.hasNextLine()) {
+                paraula = in1.nextLine();
+                valid = true;  
+            } else {
+                System.out.println("op no vàlida. Torna-ho a provar.");
+                in1.next();  
+            }
+        }
+        return paraula;  
     }
 }

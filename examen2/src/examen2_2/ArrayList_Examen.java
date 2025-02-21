@@ -13,40 +13,45 @@ public class ArrayList_Examen {
 	 * @param nom es vuit
 	 * @param Alumnes es l'array d'alumnes
 	 */
+	static ArrayList<String> Alumnes = new ArrayList<>();
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
-		ArrayList<String> Alumnes = Alumnes1();
 
 		int op = 0;
 		boolean ter = false;
 		while (!ter) {
 			menu();
 			
-			System.out.println("Introdueix una opcio: ");
-			op = in.nextInt();
+			op = askOp(in, "Introdueix una opció: ");
 			switch (op) {
-			case 1:
-				AlumnesLlistad(Alumnes);
-				break;
-			case 2:
-				ultimAlumne(Alumnes);
-				break;
-			case 3:
-				RecomptePerAlumne(Alumnes);
-				break;
-			case 4:
-				RecompteAlumnes(Alumnes);
-				break;
-			case 5:
-				Solicitar(Alumnes);
-				break;
-			case 6:
-				Exit(ter);
-				ter = true;
-				break;
-			default:
-				System.out.println("opcio no valida");
-				break;
+			 case 1:
+	                System.out.println(AlumnesLlistad(Alumnes));
+	                break;
+	            case 2:
+	                System.out.println(ultimAlumne(Alumnes));
+	                break;
+	            case 3:
+	                String name = askIn(in, "Introdueix un nom: ");
+	                System.out.println("La alumne ha anat " + RecomptePerAlumne(Alumnes, name) + " vegades al lavabo");
+	                break;
+	            case 4:
+	                System.out.println(RecompteAlumnes(Alumnes));
+	                break;
+	            case 5:
+	                String name1 = askIn(in, "Introduex el teu nom: ");
+	                if (RecomptePerAlumne(Alumnes, name1) < 3) {
+	                	Solicitar(Alumnes, name1);
+	                	System.out.println("Pots entrar!");
+	                } else {
+	                	System.out.println("No pots anar mes de 3 vegadas, cagon!");
+	                }
+	                break;
+	            case 6:
+	                ter = Exit();
+	                break;
+	            default:
+	                System.out.println("opció no vàlida");
+	                break;
 			}
 		}
 		
@@ -70,76 +75,96 @@ public class ArrayList_Examen {
 	/*
 	 * Fa els alumnes llistats
 	 */
-	public static void AlumnesLlistad(ArrayList<String> alumnes) {
-		for (int i = 0; i < alumnes.size(); i++) {
-			System.out.println(alumnes.get(i));
-		}
-		
+	public static String AlumnesLlistad(ArrayList<String> alumnes) {
+	    StringBuilder result = new StringBuilder();
+	    for (int i = 0; i < alumnes.size() - 1; i++) {
+	        result.append(alumnes.get(i)).append(", ");
+	    }
+	    result.append(alumnes.get(alumnes.size() - 1)).append(".");
+	    return result.toString();
 	}
-	/*
-	 * Fa l'ultim alumne
-	 */
-	public static void ultimAlumne(ArrayList<String> alumnes) {
-		int ultim = alumnes.size();
-		System.out.println(alumnes.get(ultim - 1));
-	}
-	/*
-	 * Fa el recomptePerAlumne
-	 */
-	public static void RecomptePerAlumne(ArrayList<String> alumnes) {
-		Scanner in = new Scanner(System.in);
-		
-		System.out.println("Introdueix el nom de l'alumne: ");
-		String alumne = in.nextLine();
-		int contador = 0;
-		for ( int i = 0; i < alumnes.size(); i++) {
-			if (alumnes.get(i).contains(alumne)) {
-				contador++;
-			}
-		}
-		System.out.println("L'alumne ha anat al lavabo " + contador + " vegades");
-		
-	}
-	/*
-	 * Fa el recompte de tots els alumnes
-	 */
-	
-	public static void RecompteAlumnes(ArrayList<String> alumnes) {
-		int contador1 = 0;
-		for ( int i = 0; i < alumnes.size(); i++) {
-			if (alumnes.get(i).contains(alumnes.get(i))) {
-				contador1++;
-			} 
-			System.out.println(alumnes.get(i) + " -> " + contador1);
-			}
-	}
-	/*
-	 * Solicita el alumne 
-	 */
-	public static void Solicitar(ArrayList<String> alumnes) {
-		Scanner in = new Scanner(System.in);
-		String nom;
-		System.out.println("Introdueix el teu nom: ");
-		nom = in.nextLine();
-		int size = alumnes.size();
-		alumnes.set(size, nom);
-	}
-	/*
-	 * Afegeix el alumne
-	 */
-	public static ArrayList<String> Alumnes1()  {
-		
-		ArrayList<String> Alumnes = new ArrayList<>();
 
-		
-		
-		return Alumnes;
+	public static String ultimAlumne(ArrayList<String> alumnes) {
+	    int ultim = alumnes.size();
+	    return alumnes.get(ultim - 1);
+	}
+
+	public static int RecomptePerAlumne(ArrayList<String> alumnes, String name) {
+	    int contador = 0;
+	    for (String alumna : alumnes) {
+	        if (alumna.equals(name)) {
+	            contador++;
+	        }
+	    }
+	    return contador;
+	}
+
+	public static String RecompteAlumnes(ArrayList<String> alumnes) {
+	    StringBuilder result = new StringBuilder();
+	    for (int i = 0; i < alumnes.size(); i++) {
+	        String alumne = alumnes.get(i);
+	        boolean jaComptat = false;
+
+	        for (int j = 0; j < i; j++) {
+	            jaComptat = jaComptat || alumnes.get(j).equals(alumne);
+	        }
+
+	        if (!jaComptat) {
+	            int contador = 0;
+	            for (int j = 0; j < alumnes.size(); j++) {
+	                if (alumnes.get(j).equals(alumne)) {
+	                    contador++;
+	                }
+	            }
+	            result.append(alumne).append(" -> ").append(contador).append("\n");
+	        }
+	    }
+	    return result.toString();
+	}
+
+	public static void Solicitar(ArrayList<String> alumnes, String name) {
+	        alumnes.add(name);
 	}
 	/*
 	 * Retorna un true si es exit
 	 */
-	public static boolean Exit(boolean ter) {
-		return ter = true;
+	public static boolean Exit() {
+		return true;
 	}
+	public static int askOp(Scanner in, String question) {
+		Scanner in2 = new Scanner(System.in);
+		int num = 0;
+		boolean valid = false;
+		while (!valid) {
+			System.out.println(question);
+			System.out.print(">>> ");
+			if(in2.hasNextInt()) {
+				num = in2.nextInt();
+				valid = true;
+			} else {
+				System.err.println("Opció no valida. Torna-ho a provar");
+				in2.next();
+			}
+		}
+		return num;
+	}
+	
+	public static String askIn(Scanner in, String question) {
+		Scanner in1 = new Scanner(System.in);
+		 String paraula = null;
+	        boolean valid = false;
+	        while (!valid) {
+	            System.out.println(question); 
+	            System.out.print(">>> ");
+	            if (in1.hasNextLine()) {
+	                paraula = in1.nextLine();
+	                valid = true;  
+	            } else {
+	                System.err.println("Ha de ser un String!");
+	                in1.next();  
+	            }
+	        }
+	        return paraula;  
+	    }
 
 }

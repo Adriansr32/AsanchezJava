@@ -2,23 +2,34 @@ package examen2_1;
 import java.util.Scanner;
 
 public class numbers {
-    public static void sumTwo() {
-        Scanner in = new Scanner(System.in);
-        System.out.println("Introdueix un numero: ");
-        int num1 = in.nextInt();
-        System.out.println("Introdueix un altre numero: ");
-        int num2 = in.nextInt();
-        System.out.println("La suma és: " + (num1 + num2));
+
+    public static int sumTwo(int one, int two) {
+        return one + two;
     }
 
-    public static void SumUntil() {
-        Scanner in = new Scanner(System.in);
-        System.out.println("Introdueix un numero: ");
-        int num = in.nextInt();
+    public static int SumUntil(int num) {
         int sum = 0;
         for (int i = 1; i <= num; i++) {
             sum += i;
         }
-        System.out.println("La suma fins a " + num + " és: " + sum);
+        return sum;
+    }
+
+    public static int askNumber(Scanner in, String question) {
+        Scanner in1 = new Scanner(System.in);
+        int num = 0;
+        boolean valid = false;
+        while (!valid) {
+            System.out.println(question); // Mostramos la pregunta
+            System.out.print(">>> ");
+            if (in1.hasNextInt()) {
+                num = in1.nextInt();
+                valid = true;  // Opción válida
+            } else {
+                System.out.println("op no vàlida. Torna-ho a provar.");
+                in1.next();  // Limpiar el buffer
+            }
+        }
+        return num;  // Retornamos el número
     }
 }

@@ -1,4 +1,4 @@
-package demo;
+package examen;
 
 import java.util.Scanner;
 
