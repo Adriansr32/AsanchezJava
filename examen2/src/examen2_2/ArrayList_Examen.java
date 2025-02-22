@@ -132,36 +132,34 @@ public class ArrayList_Examen {
 		return true;
 	}
 	public static int askOp(Scanner in, String question) {
-		Scanner in2 = new Scanner(System.in);
 		int num = 0;
 		boolean valid = false;
 		while (!valid) {
 			System.out.println(question);
 			System.out.print(">>> ");
-			if(in2.hasNextInt()) {
-				num = in2.nextInt();
+			if(in.hasNextInt()) {
+				num = in.nextInt();
 				valid = true;
 			} else {
 				System.err.println("Opció no valida. Torna-ho a provar");
-				in2.next();
+				in.next();
 			}
 		}
-		return num;
+		return num;	
 	}
 	
 	public static String askIn(Scanner in, String question) {
-		Scanner in1 = new Scanner(System.in);
 		 String paraula = null;
 	        boolean valid = false;
 	        while (!valid) {
 	            System.out.println(question); 
 	            System.out.print(">>> ");
-	            if (in1.hasNextLine()) {
-	                paraula = in1.nextLine();
+	            if (in.hasNextLine()) {
+	                paraula = in.nextLine();
 	                valid = true;  
 	            } else {
 	                System.err.println("Ha de ser un String!");
-	                in1.next();  
+	                in.next();  
 	            }
 	        }
 	        return paraula;  

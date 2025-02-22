@@ -13,7 +13,7 @@ public class JavaBank extends JFrame {
 	private static final long serialVersionUID = 1L;
 	// Make these variables publicly available
     public String Name;
-    public int Accountnum;
+    public 	int Accountnum;
     public int Balance;
 
     

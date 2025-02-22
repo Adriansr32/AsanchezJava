@@ -26,7 +26,7 @@ public class metodes2_3 {
 	            if (centenes == 1) {
 	                resultat.append("cent ");
 	            } else {
-	                resultat.append(UNITATS[centenes]).append(" cent ");
+	                resultat.append(UNITATS[centenes]).append("-cents ");
 	            }
 	            numero %= 100;
 	        }
