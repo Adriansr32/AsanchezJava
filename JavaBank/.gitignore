@@ -17,3 +17,8 @@
 /JavaBankList.class
 /testBank.class
 /testCreditAccount.class
+.classpath
+.project
+.settings
+/bin/
+META-INF/
