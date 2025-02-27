@@ -19,6 +19,6 @@
 /testCreditAccount.class
 .classpath
 .project
-.settings
+.settings/
 /bin/
 META-INF/
