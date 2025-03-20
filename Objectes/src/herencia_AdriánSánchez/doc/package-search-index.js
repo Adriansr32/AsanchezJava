@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"Objectes","l":"herencia_AdriánSánchez"}];updateSearchResults();

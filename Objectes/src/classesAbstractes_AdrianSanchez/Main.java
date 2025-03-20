@@ -18,7 +18,7 @@ public class Main {
         Employee Empleado1 = new Employee("Adrian", 18, 2400);
         Employee Empleado2 = new Employee("Adrian", 18);
         Student Estudiante1 = new Student("Adrian", "Dam", 18);
-       
+        
         Empleado1.getDescription();
         Empleado2.getDescription();
         Estudiante1.getDescription();
