@@ -58,6 +58,8 @@ public  class Aula implements Materia {
         System.out.println("Alumnos aprobados: " + aprobadosM);
         System.out.println("Alumnas aprobadas: " + aprobadosF);
     }	
+    
+    @Override
 	public int getMateriaRandom() {
 		return (int) (Math.random()*3);
 	}

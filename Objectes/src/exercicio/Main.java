@@ -2,7 +2,8 @@ package exercicio;
 
 public class Main {
     public static void main(String[] args) {
-        Estudiante[] clase1 = {
+        
+    	Estudiante[] clase1 = {
             new Estudiante("Fatima", 'F'),
             new Estudiante("Kadijha", 'F'),
             new Estudiante("Ismael", 'M'),
@@ -16,5 +17,7 @@ public class Main {
         if (aula.puedeDarseClase()) {
             aula.mostrarAprobados();
         }
+        
+        
     }
 }

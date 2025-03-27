@@ -1,21 +1,23 @@
 package interfaces_AdriánSánchez;
 
 /**
- * Driver class that creates and manages a list of tables in a restaurant.
- * It calculates the total area, number of guests, and checks if the tables fit in the dining room.
+ * Driver class that creates and manages a list of tables in a restaurant. It
+ * calculates the total area, number of guests, and checks if the tables fit in
+ * the dining room.
  */
 public class Driver {
-    public static void main(String[] args) {
+	public static void main(String[] args) {
         // Crear un array de taules de diferents tipus i mides
-        TableCalculations[] tables = new TableCalculations[6];
+        TableCalculations[] tables = {
+        	       	new RectangularTable("Vidre", true, 0, 5, 1),  // Taula rectangular regulable
+        	        new RoundTable("Fusta", false, 0.75, 1.2),     // Taula rodona no regulable
+        	        new RectangularTable("Metall", false, 0.8, 7.5, 1.5), // Taula rectangular no regulable
+        	        new RoundTable("Vidre", false, 0.6, 1.5),      // Taula rodona no regulable
+        	        new RectangularTable("Fusta", true, 178, 2913.8, 1),  // Taula rectangular regulable
+        	        new RoundTable("Metall", false, 12.9, 1.8),      // Taula rodona no regulable
+        };
 
-        // Creación de las diferentes mesas con sus características
-        tables[0] = new RectangularTable("Vidre", true, 0, 5, 1);  // Taula rectangular regulable
-        tables[1] = new RoundTable("Fusta", false, 0.75, 1.2);     // Taula rodona no regulable
-        tables[2] = new RectangularTable("Metall", false, 0.8, 7.5, 1.5); // Taula rectangular no regulable
-        tables[3] = new RoundTable("Vidre", false, 0.6, 1.5);      // Taula rodona no regulable
-        tables[4] = new RectangularTable("Fusta", true, 178, 2913.8, 1);  // Taula rectangular regulable
-        tables[5] = new RoundTable("Metall", false, 12.9, 1.8);      // Taula rodona no regulable
+  
 
         // Variables para calcular el área total y los comensales
         double areaTotal = 0;

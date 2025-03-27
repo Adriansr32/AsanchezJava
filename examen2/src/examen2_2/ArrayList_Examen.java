@@ -116,6 +116,8 @@ public class ArrayList_Examen {
 	                    contador++;
 	                }
 	            }
+	            
+	            
 	            result.append(alumne).append(" -> ").append(contador).append("\n");
 	        }
 	    }
