@@ -10,6 +10,12 @@ public class Cinema implements ICinema{
 	private ArrayList<IMovie> movies;
 	private ArrayList<ISession> sessions;
 	
+	public Cinema() {
+		this.theaters = new ArrayList<ITheater>();
+		this.movies = new ArrayList<IMovie>();
+		this.sessions = new ArrayList<ISession>();
+	}
+
 	@Override
 	public ITheater[] getTheaters() {
 		return theaters.toArray(new ITheater[0]);
@@ -22,13 +28,13 @@ public class Cinema implements ICinema{
 
 	@Override
 	public void deleteTheater(int id) throws NoSuchElementException {
-		int index = 0;
-		for (ITheater theater : theaters) {
-			if(theater.getId() == id) {
-				theaters.remove(index);
-			}
-			index++;
-		}
+	    boolean found = false;
+	    for (int i = 0; i < theaters.size(); i++) {
+	        if (theaters.get(i).getId() == id) {
+	            theaters.remove(i);
+	            found = true;
+	        }
+	    }
 	}
 
 	@Override
@@ -52,12 +58,12 @@ public class Cinema implements ICinema{
 
 	@Override
 	public void deleteMovie(int id) throws NoSuchElementException {
-		int index = 0;
-		for (IMovie movie : movies) {
-			if(movie.getId() == id) {
-				theaters.remove(index);
+		boolean found = false;
+		for (int i = 0; i < movies.size(); i++) {
+			if(movies.get(i).getId() == id) {
+				movies.remove(i);
+				found = true;
 			}
-			index++;
 		}
 	}
 
@@ -100,9 +106,9 @@ public class Cinema implements ICinema{
 	@Override
 	public void deleteSession(int id) throws NoSuchElementException {
 		boolean found = false;
-	    for (ISession session : sessions) {
-	        if (session.getId() == id) {
-	            sessions.remove(session);
+	    for (int i = 0; i < sessions.size(); i++) {
+	        if (sessions.get(i).getId() == id) {
+	            sessions.remove(i);
 	            found = true;
 	        }
 	    }
@@ -130,7 +136,7 @@ public class Cinema implements ICinema{
 	    }
 
 	    if (session == null) {
-	        System.out.println("No se encontró la sesión con id: " + idSession);
+	        System.out.println("Theres no session with that id " + idSession);
 	        return;
 	    }
 
@@ -144,10 +150,10 @@ public class Cinema implements ICinema{
 	    ISeat seat = seats.get(seatNumber);
 
 	    if (((Seat) seat).isBooked()) {
-	        System.out.println("El asiento " + seatNumber + " ya está ocupado.");
+	        System.out.println("The seat " + seatNumber + " is already occupied.");
 	    } else {
 	        ((Seat) seat).book();
-	        System.out.println("El asiento " + seatNumber + " ha sido reservado.");
+	        System.out.println("The seat " + seatNumber + " has been reserved.");
 	    }
 	}
 

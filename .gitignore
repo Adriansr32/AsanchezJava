@@ -1,5 +1,6 @@
-.project
-.classpath
-.metadata/
-.settings/
-META-INF/
+**/*.project
+**/*.classpath
+**/*.metadata/
+**/*.settings/
+**/META-INF/
+**/bin/

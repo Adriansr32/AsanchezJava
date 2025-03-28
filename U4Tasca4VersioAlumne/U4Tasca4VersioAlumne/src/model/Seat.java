@@ -4,20 +4,20 @@ public class Seat implements ISeat {
 	private boolean booked;
 	
 	
-	public Seat(boolean booked) {
-		this.booked = booked;
+	public Seat() {
+		this.booked = false;
 	}
 
 	@Override
 	public void book() throws SeatAlreadyBookedException {
 			if (this.booked) {
-				throw new SeatAlreadyBookedException("El seient ja esta ocupat");
+				System.out.println("the seat is occupied");
 			} else {
 				this.booked = true;
 			}
 		
 	}
-
+	
 	public boolean isBooked() {
 		return booked;
 	}

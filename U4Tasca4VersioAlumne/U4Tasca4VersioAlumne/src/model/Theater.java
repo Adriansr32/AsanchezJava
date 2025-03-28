@@ -31,7 +31,7 @@ public class Theater implements ITheater {
 	}
 	@Override
 	public String toString() {
-		return "id: " + id + ", capacity: " + capacity;
+		return "id: " + id + "\ncapacity: " + capacity + "\n------------------";
 	}
 
 }

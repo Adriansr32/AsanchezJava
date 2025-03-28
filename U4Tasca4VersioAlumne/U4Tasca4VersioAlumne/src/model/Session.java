@@ -9,16 +9,21 @@ public class Session implements ISession {
 	private ITheater theater;
 	private IMovie movie;
 	private ArrayList<ISeat> seats;
-	private Date data;
+	private Date date;
 	
 	
-	public Session(ITheater theater, IMovie movie, Date data) {
-		this.id = counter++;
-		this.seats = new ArrayList<ISeat>();
-		this.theater = theater;
-		this.movie = movie;
-		this.data = data;
+	public Session(ITheater theater, IMovie movie, Date date) {
+	    this.id = counter++;
+	    this.theater = theater;
+	    this.movie = movie;
+	    this.date = date;
+	    this.seats = new ArrayList<ISeat>();
+
+	    for (int i = 0; i < theater.getCapacity(); i++) {
+	        this.seats.add(new Seat());
+	    }
 	}
+
 
 	@Override
 	public int getId() {
@@ -32,12 +37,12 @@ public class Session implements ISession {
 
 	@Override
 	public Date getDate() {
-		return data;
+		return date;
 	}
 
 	@Override
 	public void setDate(Date newDate) {
-		this.data = newDate;
+		this.date = newDate;
 	}
 
 	@Override
@@ -48,5 +53,8 @@ public class Session implements ISession {
 	public ArrayList<ISeat> getSeats() {
 		return seats;
 	}
-
+	@Override
+	public String toString() {
+		return "idSession: " + id + "\nTheater" + theater + "\nMovie" + movie + "\nDate: " + date + "\n------------------";
+	}
 }

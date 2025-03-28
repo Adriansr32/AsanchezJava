@@ -54,4 +54,8 @@ public class Movie implements IMovie {
 		this.duration = duration;
 	}
 
+	@Override
+	public String toString() {
+		return "id: " + id + "\nName: " + name + "\nAuthor: " + author+ "\nDuration: " + duration + "m" + "\n------------------";
+	}
 }
