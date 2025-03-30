@@ -1,0 +1,47 @@
+# Archivos compilados
+*.class
+
+# Archivos de paquete
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Directorios de construcción
+/build/
+/dist/
+/bin/
+/out/
+/target/
+.metadata/
+# Archivos de IDE
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+.settings/
+.classpath
+.project
+
+# Archivos de log
+*.log
+/logs/
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración local
+/resources/config/local.properties
+
+# Otros archivos y directorios
+/temp/
+/tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
