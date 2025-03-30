@@ -16,6 +16,7 @@
 /bin/
 /out/
 /target/
+/tasks/
 .metadata/
 # Archivos de IDE
 .idea/
