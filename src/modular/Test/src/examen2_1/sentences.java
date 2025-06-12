@@ -1,40 +1,26 @@
-package examen2_1;
-import java.util.Scanner;
+package metodos2;
 
-public class sentences {
-    public static int Paraules(String Frase, String Paraula) {
-        String[] paraula1 = Frase.split(" ");
-        int contador = 0;
-        
-        for (String paraula : paraula1) {
-            if (paraula.contains(Paraula)) {
-                contador++;
-            }
-        }
-        
-        return contador; 
-    }
-
-    public static String Reverse(String Frase) {
-        String reversed = new StringBuilder(Frase).reverse().toString();
-        return reversed; 
-    }
-    
-    public static String askParaula(Scanner in, String question) {
-        Scanner in1 = new Scanner(System.in);
-        String paraula = null;
-        boolean valid = false;
-        while (!valid) {
-            System.out.println(question); 
-            System.out.print(">>> ");
-            if (in1.hasNextLine()) {
-                paraula = in1.nextLine();
-                valid = true;  
-            } else {
-                System.out.println("op no vàlida. Torna-ho a provar.");
-                in1.next();  
-            }
-        }
-        return paraula;  
-    }
+public class Sentences {
+	public static int countWords(String sentence, String word) {
+		if(word.length() == 0 ) {
+			return 0;
+		}
+		int count = 0;
+		int index = sentence.indexOf(word);
+		while(index!=-1) {
+			System.out.println("Found " + index+word.length());
+			count++;
+			sentence = sentence.substring(index+word.length());
+			index = sentence.indexOf(word);
+		}
+		
+		return count;
+	}
+	
+	public static String reverse(String sentence) {
+		StringBuilder rs = new StringBuilder();
+		rs.append(sentence);
+		rs.reverse();
+		return rs.toString();
+	}
 }
