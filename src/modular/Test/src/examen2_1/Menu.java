@@ -1,49 +1,44 @@
-package examen2_1;
-import java.util.Scanner;
-
+package metodos2;
+import java.util.*;
 public class Menu {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        boolean ter = false;
-        int op;
-    
-        while (!ter) {
-            menu();
-            op = op(in); 
-            
-            switch (op) {
-                case 1:
-                    System.out.println("Hello World");
-                    break;
-                case 2:
-                	int num1 = numbers.askNumber(in, "Introdueix un numero: ");
-                	int num2 = numbers.askNumber(in, "Introdueix un numero: ");
-                	System.out.println(numbers.sumTwo(num1, num2));
-                    break;
-                case 3:
-                    int num3 = numbers.askNumber(in, "Introdueix un numero: ");
-                    System.out.println("La suma fins a " + num3 + " és: " + numbers.SumUntil(num3));
-                    break;
-                case 4:
-                	String frase = sentences.askParaula(in, "Introdueix una frase: ");
-                	String paraula = sentences.askParaula(in, "Introdueix una paraula: ");
-                    System.out.println("Quantes " + paraula + " hi ha en aquesta frase: " + sentences.Paraules(frase, paraula));
-                    break;
-                case 5:
-                	String frase1 = sentences.askParaula(in, "Introdueix una frase: ");
-                    System.out.println("La frase invertida es: " + sentences.Reverse(frase1));
-                    break;
-                case 6:
-                    ter = Exit(); 
-                    break;
-                default:
-                    System.out.println("Opció no vàlida");
-                    break;
-            }
-        }
-        in.close();
-    }
 
+	public static void main(String[] args) {
+		runMenu();
+
+	}
+	public static void runMenu() {
+		Scanner sc = new Scanner(System.in);
+		int op = 0;
+		boolean ter = false;
+		
+		while(!ter) {
+			menu();
+			op = askOp(sc);
+			switch(op) {
+			case 1:
+				System.out.println(helloWorld());
+				break;
+			case 2:
+				System.out.println(Numbers.sum(askInt(sc), askInt(sc)));
+				break;
+			case 3:
+				System.out.println(Numbers.sumUntil(askIntGreaterOrEqualThan(sc, 0)));
+				break;
+			case 4:
+				System.out.println(Sentences.countWords(askString(sc), askString(sc)));
+				break;
+			case 5:
+				System.out.println(Sentences.reverse(askString(sc)));
+				break;
+			case 6:
+				ter = exit();
+				break;
+			default:
+				System.err.println("Opció no valida, torna-ho a provar");
+				break;
+			}
+		}
+	}
     public static void menu() {
         System.out.println("Menu");
         System.out.println("1. Print \"Hello World\"");
@@ -53,29 +48,63 @@ public class Menu {
         System.out.println("5. Reverse sentence.");
         System.out.println("6. Exit");    
     }
-
-    public static int op(Scanner in) {
-        int op = 0;
-        boolean valid = false;
-        while (!valid) {  // Bucle para asegurar que se ingresa una opción válida
-            System.out.println("Introdueix una opció:");
-            System.out.print(">>> ");
-            if (in.hasNextInt()) {
-                op = in.nextInt();
-                if (op >= 1 && op <= 6) {
-                    valid = true;  // Opción válida
-                } else {
-                    System.out.println("Opció fora de rang. Torna-ho a provar.");
-                }
-            } else {
-                System.out.println("op no vàlida. Torna-ho a provar.");
-                in.next();  // Limpiar el buffer
-            }
-        }
-        return op;
+    
+    public static String helloWorld() {
+    	return "Hello world";
     }
-
-    public static boolean Exit() {
-        return true;
+    
+    public static boolean exit() {
+    	return true;
+    }
+    
+    public static int askInt(Scanner sc) {
+    	int num = 0;
+    	boolean valid = false;
+  		System.out.println("Introdueix un número: ");
+		System.out.print(">> ");
+    	while(!valid) {
+    		if(sc.hasNextInt()) {
+    			num = sc.nextInt();
+    			sc.nextLine();
+    			valid = true;
+    		} else {
+    			System.err.println("Opció no valida, torna-ho a provar.");
+    		}
+    	}
+    	return num;
+    }
+    
+    public static String askString(Scanner sc) {
+    	System.out.println("Introdueix un String: ");
+    	return sc.nextLine();
+    }
+    
+    public static int askOp(Scanner sc) {
+    	int option = 0;
+    	boolean valid = false;
+    	while(!valid) {
+    		option = askInt(sc);
+    		if(option>= 1 && option <= 6 ) {
+    			valid = true;
+    		} else {
+    			System.err.println("La opción deberia de estar entre 1 y 6");
+    		}
+    	}
+    	return option;
+    }
+    
+    public static int askIntGreaterOrEqualThan(Scanner sc, int threshold) {
+    	int n = 0;
+    	boolean valid = false;
+    	System.out.println("Introdueix un número mayor o igual que " + threshold + ":");
+    	while(!valid) {
+    		n = askInt(sc);
+    		if (n>= threshold) {
+    			valid = true;
+    		} else {
+    			System.err.println("L'opció ha de ser major o igual que " + threshold + ":");
+    		}
+    	}
+    	return n;
     }
 }
