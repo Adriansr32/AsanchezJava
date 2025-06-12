@@ -6,6 +6,10 @@ public class Lavabo {
 	static ArrayList<String> wc = new ArrayList<>();
 
 	public static void main(String[] args) {
+		runMenu();
+	}
+	
+	public static void runMenu() {
 		Scanner sc = new Scanner(System.in);
 		boolean ter = false;
 		int op = 0;
@@ -42,7 +46,6 @@ public class Lavabo {
 			}
 
 		}
-
 	}
 
 	public static void menu() {
@@ -112,7 +115,7 @@ public class Lavabo {
 		int option = 0;
 		boolean valid = false;
 		System.out.println("Introdueix una opció: ");
-		System.out.print(">>");
+		System.out.print(">> ");
 		while (!valid) {
 			option = askInt(sc);
 			if (option >= 1 && option <= 6) {
@@ -128,10 +131,11 @@ public class Lavabo {
 		int num = 0;
 		boolean valid = false;
 		System.out.println("Introdueix un número: ");
-		System.out.print(">>");
+		System.out.print(">> ");
 		while (!valid) {
 			if (sc.hasNextInt()) {
 				num = sc.nextInt();
+				sc.nextLine();
 				valid = true;
 			} else {
 				System.err.println("Opció no valida. Torna-ho a provar.");
@@ -143,12 +147,14 @@ public class Lavabo {
 
 	public static String askString(Scanner sc) {
 		System.out.println("Introdueix un string: ");
+		System.out.print(">> ");
 		return sc.nextLine();
 	}
 
 	public static String askStudent(Scanner sc) {
 		System.out.println("Introdueix el nom del estudiant: ");
-		return sc.nextLine();
+		System.out.print(">> ");
+		return sc.nextLine().toLowerCase();
 	}
 
 	public static boolean exit() {
